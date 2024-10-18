@@ -1,0 +1,214 @@
+2. 
+$ cd /c/Users/User/desktop/bash.training
+
+3. 
+$ mkdir test3
+
+4. 
+$ cd test3
+
+$ touch 4.txt
+$ nano 4.txt
+
+Вводим текст
+row1
+row2
+row3
+row4
+
+CTRL+X
+CTRL+Y
+ENTER
+
+$ cp 4.txt 5.txt
+$ cp 4.txt 6.txt
+
+5.
+$ grep -i -n 2 5.txt
+2:row2
+
+6.
+$ grep -R "row" .
+./4.txt:row1
+./4.txt:row2
+./4.txt:row3
+./4.txt:row4
+./5.txt:row1
+./5.txt:row2
+./5.txt:row3
+./5.txt:row4
+./6.txt:row1
+./6.txt:row2
+./6.txt:row3
+./6.txt:row4
+
+7.
+$ grep -c "row" 6.txt
+4
+
+8. 
+$ find -name "5.txt"
+./5.txt
+(так как мы уже находимся в папке тест3, ищем по этой папке)
+
+9.
+$ find -name "5.txt" -delete
+
+10. 
+$ echo "test" >> 4.txt
+(если поставить > вместо >>, то заменится строка. Сделала без замены)
+
+$ cat 4.txt
+row1
+row2
+row3
+row4
+
+test
+
+11. 
+$ nano 4.txt
+Заменяем test на fall
+
+CTRL+X
+CTRL+Y
+ENTER
+
+12.
+$ echo "test" >> 4.txt
+$ cat 4.txt
+row1
+row2
+row3
+row4
+
+fall
+test
+
+13. 
+$ ps aux
+      PID    PPID    PGID     WINPID   TTY         UID    STIME COMMAND
+     2433    2432    2433       7252  pty0      197608 12:39:23 /usr/bin/bash
+     2492    2163    2492      10552  cons2     197608 12:41:13 /usr/bin/ps
+     2432       1    2432      12636  ?         197608 12:39:23 /usr/bin/mintty
+     2163       1    2163       2260  cons2     197608 12:11:17 /usr/bin/bash
+
+(почему-то ps и ps aux показывает одно и то же)
+
+14.
+$ kill 666
+bash: kill: (666) - No such process
+
+15.
+$ ping rusau.net
+
+Обмен пакетами с rusau.net [5.181.161.75] с 32 байтами данных:
+Ответ от 5.181.161.75: число байт=32 время=169мс TTL=53
+Ответ от 5.181.161.75: число байт=32 время=123мс TTL=53
+Ответ от 5.181.161.75: число байт=32 время=168мс TTL=53
+Ответ от 5.181.161.75: число байт=32 время=149мс TTL=54
+
+Статистика Ping для 5.181.161.75:
+    Пакетов: отправлено = 4, получено = 4, потеряно = 0
+    (0% потерь)
+Приблизительное время приема-передачи в мс:
+    Минимальное = 123мсек, Максимальное = 169 мсек, Среднее = 152 мсек
+
+16.
+$ ping -c 5 rusau.net
+Доступ запрещен. Для параметра -c требуются права администратора.
+
+Запустила от имени администратора.
+$ ping -c 5 rusau.net
+Недопустимое значение параметра -c.
+
+
+17.
+$ curl https://petstore.swagger.io/v2/pet/findByStatus?status=pending
+или 
+$ curl -X GET https://petstore.swagger.io/v2/pet/findByStatus?status=pending
+
+[
+  {
+    "id": 81723614,
+    "category": {
+      "id": -35894100,
+      "name": "sit reprehenderit fugiat amet aliqua"
+    },
+    "name": "doggie",
+    "photoUrls": [
+      "occaecat nostrud dolore fugiat tempor",
+      "id est"
+    ],
+    "tags": [
+      {
+        "id": -85885711,
+        "name": "pariatur labore Lorem"
+      },
+      {
+        "id": -37987020,
+        "name": "v"
+      }
+    ],
+    "status": "pending"
+  },
+  {
+    "id": 1010,
+    "category": {
+      "id": 0,
+      "name": "sheep"
+    },
+    "name": "lamb",
+    "photoUrls": [
+      "kid"
+    ],
+    "tags": [
+      {
+        "id": 0,
+        "name": "string"
+      }
+    ],
+    "status": "pending"
+  },
+  {
+    "id": 760,
+    "category": {
+      "id": 0,
+      "name": "<categoryname>"
+    },
+    "name": "man",
+    "photoUrls": [
+      "woman"
+    ],
+    "tags": [
+      {
+        "id": 0,
+        "name": "<tag>"
+      }
+    ],
+    "status": "pending"
+  },
+  {
+    "id": 9223372016900013000,
+    "category": {
+      "id": 2,
+      "name": "dogs"
+    },
+    "name": "Sharik",
+    "photoUrls": [
+      "stepik.org"
+    ],
+    "tags": [
+      {
+        "id": 1,
+        "name": "cute"
+      }
+    ],
+    "status": "pending"
+  }
+]
+
+
+
+18. 
+curl -X POST https://petstore.swagger.io/v2/user --data "id=99998" --data "username=Myname" --data "firstName=Myfirstname" --data "lastName=Mylastname" --data "email=9@9.com" --data "password=thethe99" --data "phone=9999" --data "userStatus=0"

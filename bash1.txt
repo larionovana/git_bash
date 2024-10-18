@@ -1,0 +1,99 @@
+User@DESKTOP-QF3SBUF MINGW64 ~/Desktop/bash.training
+
+2.
+$ cd /c/Users/User/desktop/bash.training
+
+3.
+$ pwd
+/c/Users/User/desktop/bash.training
+
+4.
+$ mkdir test1
+
+5.
+$ cd /c/Users/User/desktop/bash.training/test1
+или
+$ cd test1
+
+$ pwd
+/c/Users/User/desktop/bash.training/test1
+
+6.
+$ touch 1 2 3
+
+7.
+$ ls
+1  2  3
+
+8. 
+$ cd /c/Users/User/desktop/bash.training
+или
+$ cd ..
+
+9. 
+mkdir test2
+
+10.
+$ rmdir test2
+
+11.
+$ rm test1/2
+
+12.
+$ mkdir test3
+$ touch test3/1 test3/2
+
+13. 
+$ rm -r test3
+
+14. 
+$ mkdir test4
+
+15.
+$ mv test1/1 test4
+$ mv test1/3 test4
+
+16.
+$cd /c/Users/User/Desktop/bash.training/test4
+$mv 1 1.txt
+$mv 3 3.txt
+$echo "line" >> 1.txt
+$echo "line" >> 1.txt
+$echo "line" >> 1.txt
+
+17. 
+$ cat 1.txt
+
+18. 
+$ cat 1.txt > 3.txt
+
+19.
+$ cat 1.txt 3.txt
+
+20. 
+$ nano 1.txt
+Меняем текст в строках
+CTRL+X
+CTRL+Y
+ENTER
+
+$ cat 1.txt
+pum
+pum
+pururum
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
